@@ -3,7 +3,7 @@
 extends layout
 
 block layout-content
-  div.View.WelcomeView
+  div.View.WelcomeView.container
     h1.Banner PLACEHOLDER
     div.Message
       div.Title
@@ -13,4 +13,6 @@ block layout-content
     div.NavButtons
       a(href="/user")
           div.NavButton PLACEHOLDER
+      button.button.btn-primary(type="button")
+        span Primary
 
