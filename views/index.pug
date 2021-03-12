@@ -1,18 +1,62 @@
-
-
 extends layout
 
 block layout-content
-  div.View.WelcomeView.container
-    h1.Banner PLACEHOLDER
-    div.Message
-      div.Title
-        h3 PLACEHOLDER HEADING
-        h1 PLACEHOLDER
-      span.Details PLACEHOLDER DETAILS
-    div.NavButtons
-      a(href="/user")
-          div.NavButton PLACEHOLDER
-      button.button.btn-primary(type="button")
-        span Primary
 
+    div.container
+        script.
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            $( function() {
+                var restaurants = !{JSON.stringify(restaurants)};
+                $( "#accordion" ).accordion();
+
+                var toSelect = new Array();
+                var toReject= new Array();
+
+                $(".restaurantButton").click(function(){
+                    var thisClass = '.' + $(this).attr("class").replace(/ /g, '.');
+                    var index = $(this).attr("class").match(/[0-9]+/);
+                    if(thisClass.match(/btn-primary/)){
+                        $(thisClass).removeClass("btn-primary").addClass("btn-secondary");
+                        toReject.push(restaurants[index]);
+                    }
+                    else if(thisClass.match(/btn-secondary/)){
+                        $(thisClass).removeClass("btn-secondary").addClass("btn-primary");
+                        var index = $(this).attr("class").match(/[0-9]+/);
+                        toReject = toReject.filter(x => x != restaurants[index]);
+                    }
+
+                });
+                
+                $("#selectButton").click(function(){
+                   toSelect = null;
+                   var dinner = null;
+                   toSelect = restaurants.filter(x => !toReject.includes(x));
+
+                   dinner = toSelect[getRandomInt(0, toSelect.length-1)];
+                   
+                   $("#result").hide();
+                   $("#result").text(dinner);
+                   $("#result").fadeIn(2000);
+                });
+                           
+            });
+     
+        div(id="accordion")
+            - for(p=0; p<people.length; p++){   
+            h3 #{people[p]}
+            div
+                - for(var r=0; r<restaurants.length; r++){ 
+                - var numClass = "restaurant-" + r;
+                button.btn.btn-primary.restaurantButton(type="button", class=numClass) #{restaurants[r]} 
+                
+                -}
+            -}
+        button.btn.btn-primary(type="button", id="selectButton") 
+            span  What's for Dinner?
+
+        div(id="result")

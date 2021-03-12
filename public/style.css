@@ -1,0 +1,11 @@
+button{
+    margin: 2px;
+}
+
+#result{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 24pt;
+}
+
