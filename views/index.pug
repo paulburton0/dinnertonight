@@ -48,7 +48,7 @@ block layout-content
      
         div(id="accordion")
             - for(p=0; p<people.length; p++){   
-            h3 #{people[p]}
+            h3 #{people[p]} - pick 3 to eliminate
             div
                 - for(var r=0; r<restaurants.length; r++){ 
                 - var numClass = "restaurant-" + r;
@@ -56,7 +56,8 @@ block layout-content
                 
                 -}
             -}
-        button.btn.btn-primary(type="button", id="selectButton") 
-            span  What's for Dinner?
+        center
+            button.btn.btn-primary(type="button", id="selectButton") 
+                span  What's for Dinner?
 
         div(id="result")

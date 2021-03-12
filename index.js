@@ -29,7 +29,38 @@ app.use(express.static(path.join(__dirname, "public")));
  */
 
 
-var restaurants = [ 'McDonald\'s', 'Popeye\'s', 'Pho Saigon', 'Potbelly', 'Nando\'s Peri Peri', 'Chick-fil-A', 'Eugene\'s', 'SmashBurger', 'Five Guys', 'Tony\'s', 'Buffalo Wild Wings', 'Chipotle', 'Ledo Pizza', 'Sonic', 'Logans Roadhouse', 'The Bone', 'Arby\'s', 'Wendy\'s' ];
+var restaurants = [
+                    'McDonald\'s',
+                    'Popeye\'s', 
+                    'Pho Saigon',
+                    'Potbelly',
+                    'Nando\'s PERi PERi',
+                    'Chick-fil-A',
+                    'Eugene\'s',
+                    'SmashBurger',
+                    'Five Guys',
+                    'Tony\'s',
+                    'Buffalo Wild Wings',
+                    'Chipotle',
+                    'Ledo Pizza',
+                    'Sonic',
+                    'Logans Roadhouse',
+                    'The Bone',
+                    'Arby\'s',
+                    'Wendy\'s',
+                    'Foster\'s',
+                    'Uncle Julio\'s',
+                    'Ethel\'s',
+                    'Zandra\'s Taqueria',
+                    'BJ\'s Restaurant',
+                    'Thai Peppers',
+                    'Eggspectation',
+                    'Cracker Barrel',
+                    'Red Robin',
+                    'Checkers',
+                    'Jersey Mike\'s',
+                    'Wegmans'
+];
 
 var people = [ 'Dad', 'Katelyn', 'Luke' ];
 
