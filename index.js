@@ -24,6 +24,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
 
+reverseProxyDir = '/dinnertonight';
+
 /**
  * Routes Definitions
  */
@@ -89,11 +91,8 @@ function shuffle(array) {
     return array;
 }
 
-//var restaurant = restaurants[getRandomInt(0, restaurants.length-1)];
-//var person = people[getRandomInt(0, people.length-1)];
-
 app.get("/", (req, res) => {
-  res.render("index", { title: "Home", restaurants: shuffle(restaurants), people: shuffle(people) });
+  res.render("index", { proxyDir: reverseProxyDir, title: "Home", restaurants: shuffle(restaurants), people: shuffle(people) });
 });
 
 /**

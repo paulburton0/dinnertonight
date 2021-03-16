@@ -39,11 +39,20 @@ block layout-content
 
                    dinner = toSelect[getRandomInt(0, toSelect.length-1)];
                    
-                   $("#result").hide();
-                   $("#result").text(dinner);
-                   $("#result").fadeIn(2000);
+                   $("#dialog").text(dinner);
                 });
                            
+                $( "#dialog" ).dialog({ 
+                  autoOpen: false,
+                  position: {
+                    my: "center top",
+                    at: "center top+10%"
+                  } 
+                });
+                $( "#selectButton" ).click(function() {
+                  $( "#dialog" ).dialog( "open" );
+                });
+
             });
      
         div(id="accordion")
@@ -60,4 +69,4 @@ block layout-content
             button.btn.btn-primary(type="button", id="selectButton") 
                 span  What's for Dinner?
 
-        div(id="result")
+        div(id="dialog")
