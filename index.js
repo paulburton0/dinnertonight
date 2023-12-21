@@ -39,7 +39,7 @@ var restaurants = [
                     'Potbelly',
                     'Nando\'s PERi PERi',
                     'Chick-fil-A',
-                    'Eugene\'s',
+                    'Eugene\'s/Ethel\'s',
                     'SmashBurger',
                     'Five Guys',
                     'Tony\'s',
@@ -51,8 +51,7 @@ var restaurants = [
                     'Arby\'s',
                     'Wendy\'s',
                     'Foster\'s',
-                    'Uncle Julio\'s',
-                    'Ethel\'s',
+                    'Parrando\'s',
                     'Zandra\'s Taqueria',
                     'BJ\'s Restaurant',
                     'Thai Peppers',
@@ -61,7 +60,8 @@ var restaurants = [
                     'Red Robin',
                     'Checkers',
                     'Jersey Mike\'s',
-                    'Wegmans'
+                    'Wegmans',
+                    'Hangry Joe\'s'
 ];
 
 var people = [ 'Dad', 'Katelyn', 'Luke' ];
