@@ -24,7 +24,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
 
-reverseProxyDir = '/dinnertonight';
+// If you use dinnertonight behind a reverse proxy, then put the value of the directory that the proxt maps to here
+reverseProxyDir = '';
 
 /**
  * Routes Definitions
@@ -46,7 +47,6 @@ var restaurants = [
                     'Chipotle',
                     'Ledo Pizza',
                     'Sonic',
-                    'Logans Roadhouse',
                     'The Bone',
                     'Arby\'s',
                     'Wendy\'s',
